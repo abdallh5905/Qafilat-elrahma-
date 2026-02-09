@@ -9,18 +9,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0A5C36;
-            --primary-soft: #1A7C4A;
-            --secondary: #FFFFFF;
-            --accent: #ffc727;
-            --accent-soft: #fff4cc;
-            --light-bg: #f4faf7;
-            --light-card: #ffffff;
-            --dark-gold: #b8941f;
-            --gray: #60727d;
+            --primary: #0C4532;
+            --primary-soft: #1B6E4F;
+            --secondary: #F8F5F0;
+            --accent: #C19A53;
+            --accent-soft: #F0E6D0;
+            --light-bg: #FAF8F5;
+            --light-card: #FFFFFF;
+            --dark-gold: #A87D2E;
+            --gray: #6B7B7C;
             --line-soft: rgba(255,255,255,0.12);
             --whatsapp: #25D366;
             --call: #1E88E5;
+            
+            /* ألوان الباقات المميزة */
+            --package1: #E8F3EF;
+            --package2: #F9F1E7;
+            --package3: #F0F7E9;
         }
         * {
             margin: 0;
@@ -145,7 +150,7 @@
             background: transparent;
         }
         header.scrolled {
-            background: rgba(10, 92, 54, 0.96);
+            background: rgba(12, 69, 50, 0.96);
             box-shadow: 0 6px 26px rgba(0,0,0,0.35);
             backdrop-filter: blur(12px);
         }
@@ -255,7 +260,7 @@
             right: -100%;
             width: 78%;
             height: calc(100vh - 72px);
-            background: linear-gradient(145deg, #08482a, #0A5C36);
+            background: linear-gradient(145deg, #0a3a28, #0C4532);
             transition: right 0.4s ease;
             z-index: 999;
             box-shadow: -7px 0 25px rgba(0,0,0,0.4);
@@ -287,26 +292,30 @@
             gap: 12px;
         }
 
-        /* HERO */
+        /* HERO - تم التحديث */
         .hero {
             min-height: 100vh;
             padding: 120px 0 90px;
             background-image:
-              linear-gradient(135deg, rgba(10, 92, 54, 0.96), rgba(26, 124, 74, 0.97)),
-              url('https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=2000&q=80');
+                linear-gradient(135deg, rgba(12, 69, 50, 0.88), rgba(27, 110, 79, 0.92)),
+                url('https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=2000&q=80&blend=0C4532&blend-mode=multiply');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             color: #fff;
             position: relative;
+            overflow: hidden;
         }
-        .hero::after {
+        .hero::before {
             content: '';
             position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(circle at 20% 15%, rgba(255,255,255,0.09), transparent 55%),
-                radial-gradient(circle at 80% 80%, rgba(0,0,0,0.45), transparent 60%);
-            pointer-events: none;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23C19A53' fill-opacity='0.08' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.4;
+            z-index: 0;
         }
         .hero-inner {
             position: relative;
@@ -346,6 +355,7 @@
             line-height: 1.5;
             margin-bottom: 10px;
             color: var(--accent);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
         .hero-title-main span {
             color: #ffffff;
@@ -434,9 +444,9 @@
             color: var(--gray);
         }
 
-        /* PACKAGES */
+        /* PACKAGES - تم التحديث بشكل كبير */
         .packages {
-            background: radial-gradient(circle at 0% 0%, #fff7d6 0, #f7fafc 40%, #e7f7ef 100%);
+            background: radial-gradient(circle at 0% 0%, #F8F5F0 0, #FAF8F5 40%, #F0F5F2 100%);
             position: relative;
             overflow: hidden;
         }
@@ -445,7 +455,7 @@
             content: '';
             position: absolute;
             border-radius: 50%;
-            background: rgba(255, 204, 51, 0.12);
+            background: rgba(193, 154, 83, 0.08);
             filter: blur(2px);
             z-index: 0;
         }
@@ -467,43 +477,59 @@
         }
         .packages-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
             align-items: stretch;
             margin-top: 10px;
         }
         .package-card {
             background: var(--light-card);
             border-radius: 22px;
-            padding: 22px 20px 18px;
-            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(10, 92, 54, 0.06);
+            padding: 26px 24px 22px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(12, 69, 50, 0.08);
             position: relative;
             overflow: hidden;
             transform: translateY(0);
-            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
+        
+        /* ألوان خلفية خاصة لكل بطاقة */
+        .package-card:nth-child(1) {
+            background: linear-gradient(135deg, var(--package1) 0%, #FFFFFF 30%);
+            border-top: 4px solid #0C4532;
+        }
+        .package-card:nth-child(2) {
+            background: linear-gradient(135deg, var(--package2) 0%, #FFFFFF 30%);
+            border-top: 4px solid var(--dark-gold);
+        }
+        .package-card:nth-child(3) {
+            background: linear-gradient(135deg, var(--package3) 0%, #FFFFFF 30%);
+            border-top: 4px solid #1B6E4F;
+        }
+        
         .package-card::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at 0 0, rgba(255, 204, 51, 0.22), transparent 55%);
+            background: radial-gradient(circle at 0 0, rgba(193, 154, 83, 0.12), transparent 55%);
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.3s ease;
         }
         .package-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 22px 46px rgba(0, 0, 0, 0.14);
-            border-color: rgba(255, 204, 51, 0.55);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+            border-color: rgba(193, 154, 83, 0.4);
         }
         .package-card:hover::after {
             opacity: 1;
         }
         .package-card.highlight {
-            border-width: 2px;
-            border-image: linear-gradient(135deg, var(--accent), var(--dark-gold)) 1;
-            box-shadow: 0 24px 55px rgba(0, 0, 0, 0.16);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.14);
             transform: translateY(-6px);
         }
         .package-card.highlight:hover {
@@ -513,66 +539,102 @@
             position: absolute;
             top: 18px;
             right: 18px;
-            padding: 4px 12px;
+            padding: 5px 14px;
             border-radius: 999px;
             background: var(--accent-soft);
             color: #856000;
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             font-weight: 800;
             letter-spacing: 0.3px;
+            border: 1px solid rgba(193, 154, 83, 0.3);
+        }
+        .package-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
         }
         .package-icon-wrap {
-            width: 50px;
-            height: 50px;
-            border-radius: 18px;
-            background: rgba(255, 204, 51, 0.14);
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 10px;
+            flex-shrink: 0;
+        }
+        /* ألوان مختلفة لأيقونات الباقات */
+        .package-card:nth-child(1) .package-icon-wrap {
+            background: rgba(12, 69, 50, 0.1);
+        }
+        .package-card:nth-child(2) .package-icon-wrap {
+            background: rgba(193, 154, 83, 0.15);
+        }
+        .package-card:nth-child(3) .package-icon-wrap {
+            background: rgba(27, 110, 79, 0.1);
         }
         .package-icon-wrap i {
-            font-size: 1.5rem;
-            color: var(--accent);
+            font-size: 1.6rem;
+        }
+        /* ألوان مختلفة للأيقونات */
+        .package-card:nth-child(1) .package-icon-wrap i {
+            color: #0C4532;
+        }
+        .package-card:nth-child(2) .package-icon-wrap i {
+            color: var(--dark-gold);
+        }
+        .package-card:nth-child(3) .package-icon-wrap i {
+            color: #1B6E4F;
+        }
+        .package-title-wrap {
+            flex: 1;
         }
         .package-title {
-            font-size: 1.25rem;
-            margin-bottom: 6px;
+            font-size: 1.3rem;
+            margin-bottom: 4px;
         }
         .package-sub {
             font-size: 0.95rem;
             color: var(--gray);
-            margin-bottom: 12px;
+            margin-bottom: 16px;
         }
         .package-features {
             list-style: none;
-            margin-bottom: 14px;
+            margin-bottom: 20px;
+            flex: 1;
         }
         .package-features li {
-            font-size: 0.92rem;
-            padding: 6px 0;
+            font-size: 0.94rem;
+            padding: 8px 0;
             display: flex;
-            align-items: center;
-            gap: 7px;
-            border-bottom: 1px dashed rgba(0, 0, 0, 0.04);
+            align-items: flex-start;
+            gap: 10px;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.05);
         }
         .package-features li:last-child {
             border-bottom: none;
         }
         .package-features li i {
             color: var(--accent);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
+            margin-top: 3px;
+            flex-shrink: 0;
         }
         .package-actions {
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            margin-top: 6px;
+            gap: 10px;
+            margin-top: auto;
         }
         .package-note {
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             color: var(--gray);
-            margin-top: 6px;
+            margin-top: 8px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 8px;
+            text-align: center;
+            border-right: 3px solid var(--accent);
         }
 
         /* WHY US */
@@ -587,7 +649,7 @@
             inset-inline: 0;
             top: 0;
             height: 140px;
-            background: linear-gradient(135deg, rgba(10, 92, 54, 0.06), transparent);
+            background: linear-gradient(135deg, rgba(12, 69, 50, 0.06), transparent);
             pointer-events: none;
         }
         .why-us .container {
@@ -606,7 +668,7 @@
             border-radius: 999px;
             padding: 12px 18px 12px 16px;
             box-shadow: 0 12px 32px rgba(0, 0, 0, 0.04);
-            border: 1px solid rgba(10, 92, 54, 0.06);
+            border: 1px solid rgba(12, 69, 50, 0.06);
             display: flex;
             align-items: center;
             gap: 14px;
@@ -618,7 +680,7 @@
             position: absolute;
             inset: 0;
             border-radius: inherit;
-            border: 2px dashed rgba(255, 204, 51, 0.35);
+            border: 2px dashed rgba(193, 154, 83, 0.35);
             opacity: 0;
             transform: scale(0.96);
             pointer-events: none;
@@ -632,7 +694,7 @@
             width: 54px;
             height: 54px;
             border-radius: 999px;
-            background: radial-gradient(circle at 30% 20%, #fff, rgba(255, 204, 51, 0.45));
+            background: radial-gradient(circle at 30% 20%, #fff, rgba(193, 154, 83, 0.25));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -672,14 +734,14 @@
             border-radius: 18px;
             overflow: hidden;
             box-shadow: 0 12px 30px rgba(0,0,0,0.06);
-            border: 1px solid rgba(10, 92, 54, 0.05);
+            border: 1px solid rgba(12, 69, 50, 0.05);
             transform: translateY(0);
             transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
         }
         .hotel-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 18px 40px rgba(0,0,0,0.12);
-            border-color: rgba(255,204,51,0.5);
+            border-color: rgba(193,154,83,0.5);
         }
         .hotel-image {
             height: 190px;
@@ -850,7 +912,7 @@
             justify-content: center;
         }
         .footer-logo-icon i {
-            color: #1b2730;
+            color: var(--accent);
             font-size: 1.6rem;
         }
         .footer-logo-main {
@@ -967,6 +1029,7 @@
             h2 { font-size: 2rem; }
             .hero {
                 padding: 115px 0 70px;
+                background-attachment: scroll;
             }
             .hero-title-main {
                 font-size: 2rem;
@@ -980,6 +1043,11 @@
             .floating-buttons {
                 left: 18px;
                 bottom: 18px;
+            }
+            .package-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
             }
         }
         @media (max-width: 480px) {
@@ -995,6 +1063,9 @@
             .floating-btn {
                 width: 50px;
                 height: 50px;
+            }
+            .packages-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -1085,7 +1156,8 @@
             <nav class="navbar">
                 <a href="#home" class="logo-wrap">
                     <div class="logo-icon-circle">
-                        <i class="fas fa-truck-moving" style="font-size: 1.8rem; color: var(--accent);"></i>
+                        <!-- تم تغيير الأيقونة إلى رمز الحج والعمرة -->
+                        <i class="fas fa-kaaba" style="font-size: 1.8rem; color: var(--accent);"></i>
                     </div>
                     <div class="logo-text">
                         <span class="logo-main">قافلة الرحمة</span>
@@ -1210,11 +1282,15 @@
                 <!-- Package 1 -->
                 <div class="package-card">
                     <div class="package-chip">الأكثر طلبًا</div>
-                    <div class="package-icon-wrap">
-                        <i class="fas fa-wallet"></i>
+                    <div class="package-header">
+                        <div class="package-icon-wrap">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <div class="package-title-wrap">
+                            <h3 class="package-title">الباقة الاقتصادية</h3>
+                            <p class="package-sub">رحلات شبه يومية من الرياض مع إقامة مريحة بأسعار مناسبة.</p>
+                        </div>
                     </div>
-                    <h3 class="package-title">الباقة الاقتصادية</h3>
-                    <p class="package-sub">رحلات شبه يومية من الرياض مع إقامة مريحة بأسعار مناسبة.</p>
                     <ul class="package-features">
                         <li><i class="fas fa-check"></i> فنادق 3 نجوم نظيفة ومريحة بالقرب من خدمات الحرم</li>
                         <li><i class="fas fa-check"></i> باصات حديثة ومكيفة ذهابًا وعودًة</li>
@@ -1240,11 +1316,15 @@
                 <!-- Package 2 -->
                 <div class="package-card highlight">
                     <div class="package-chip">VIP</div>
-                    <div class="package-icon-wrap">
-                        <i class="fas fa-crown"></i>
+                    <div class="package-header">
+                        <div class="package-icon-wrap">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="package-title-wrap">
+                            <h3 class="package-title">باقة VIP الفاخرة</h3>
+                            <p class="package-sub">خدمة فاخرة لعشاق الراحة والتميز بالقرب من الحرم.</p>
+                        </div>
                     </div>
-                    <h3 class="package-title">باقة VIP الفاخرة</h3>
-                    <p class="package-sub">خدمة فاخرة لعشاق الراحة والتميز بالقرب من الحرم.</p>
                     <ul class="package-features">
                         <li><i class="fas fa-check"></i> فنادق 5 نجوم قريبة من الحرم</li>
                         <li><i class="fas fa-check"></i> باصات VIP بمقاعد واسعة ومائلة</li>
@@ -1270,11 +1350,15 @@
                 <!-- Package 3 -->
                 <div class="package-card">
                     <div class="package-chip">خدمة إضافية</div>
-                    <div class="package-icon-wrap">
-                        <i class="fas fa-hotel"></i>
+                    <div class="package-header">
+                        <div class="package-icon-wrap">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                        <div class="package-title-wrap">
+                            <h3 class="package-title">حجز فنادق مكة والمدينة</h3>
+                            <p class="package-sub">خدمة حجز فنادق مستقلة لمن لديه ترتيب مواصلات خاص.</p>
+                        </div>
                     </div>
-                    <h3 class="package-title">حجز فنادق مكة والمدينة</h3>
-                    <p class="package-sub">خدمة حجز فنادق مستقلة لمن لديه ترتيب مواصلات خاص.</p>
                     <ul class="package-features">
                         <li><i class="fas fa-check"></i> خيارات متعددة من 3 إلى 5 نجوم</li>
                         <li><i class="fas fa-check"></i> حجوزات لمكة والمدينة المنورة</li>
@@ -1676,7 +1760,7 @@
                 <div>
                     <div class="footer-logo-wrap">
                         <div class="footer-logo-icon">
-                            <i class="fas fa-truck-moving" style="font-size: 1.6rem; color: var(--accent);"></i>
+                            <i class="fas fa-kaaba" style="font-size: 1.6rem; color: var(--accent);"></i>
                         </div>
                         <div>
                             <div class="footer-logo-main">قافلة الرحمة</div>
